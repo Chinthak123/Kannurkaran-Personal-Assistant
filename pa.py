@@ -12,14 +12,13 @@ import datetime
 import webbrowser
 import time
 
-#function to make assistant speak
+
 def speak(text):
     engine=pyttsx3.init()
     engine.setProperty('rate', 150)
     engine.say(text)
     engine.runAndWait()
     time.sleep(0.5)
-#function to take a voice command from the user
 def take_command():
     recognizer=sr.Recognizer()
     with sr.Microphone() as source:
@@ -37,11 +36,6 @@ def take_command():
             print("Net onnum kittnnillaaa ettaa")
             return None
     return command.lower()
-            
-
-
-        
-    #Function to respond to different commands
 def respond(command):
     if 'hello' in command or 'hi' in command:
         speak("Hello!Ettaaaa,ningakk enna bende")
@@ -74,7 +68,7 @@ def respond(command):
         
         
         
-        #main function to run the assistant
+        
 def run_assistant():
     speak("Hello,njn ningala assistant,para enna bende?")
     while True:
